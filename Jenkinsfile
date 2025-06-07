@@ -4,7 +4,7 @@ pipeline {
     environment {
         DOCKER_IMAGE = 'rajkumarmca23/myapp'
         REGISTRY_CREDENTIAL = 'dockerhub'
-        SONARQUBE_ENV = 'MySonarQube' // Jenkins SonarQube server name
+        SONARQUBE_ENV = 'Sonar' // Jenkins SonarQube server name
         PROJECT_KEY = 'Sonar' // Customize for SonarQube project key
     }
 
@@ -33,7 +33,7 @@ pipeline {
                         sonar-scanner \
                         -Dsonar.projectKey=${PROJECT_KEY} \
                         -Dsonar.sources=. \
-                        -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
+                        -Dsonar.host.url=http://3.22.186.222:9000
                     """
                 }
             }
