@@ -1,7 +1,10 @@
 pipeline {
     agent any
 
-
+        environment {
+        DOCKER_IMAGE = 'rajkumarmca23/myapp'
+        REGISTRY_CREDENTIAL = 'dockerhub'
+    }
 
 
     stages {
